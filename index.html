@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box{
+            width: 250px;
+            height: 150px;
+background: rgba(255, 255, 255, 0.06);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.5px);
+-webkit-backdrop-filter: blur(4.5px);
+border: 1px solid rgba(91, 88, 88, 0.3);
+
+        }
+        button{
+            /* margin-top: 20px;  */
+            margin-left: 70px;
+            background: transparent;
+            border: 1px solid black;
+            letter-spacing: 1px;
+            padding: 6px;
+            transition: all 0.5s;
+            border-radius: 4px;
+background: rgba(255, 255, 255, 0.06);
+border-radius: 6px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.5px);
+-webkit-backdrop-filter: blur(4.5px);
+border: 1px solid rgba(93, 91, 91, 0.3);
+        }
+        button:hover{
+            background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            border: rgb(238,174,202);
+            border-radius: 4px;
+        }
+        h1{
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+        p{
+            text-align: center;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random color Generator</h1>
+    <div class="main">
+    <div class="box">
+        
+        <p>Color code</p>
+        <button>Change Color</button>
+    </div>
+</div>
+
+    <script>
+        const code = document.querySelector('p')
+        let btn = document.querySelector('button')
+        let body = document.querySelector('body')
+
+        let color =['#ffb3ba','#ffdfba','#ffffba','	#baffc9','#bae1ff','#ff80ed','#065535','#008080','#bada55','#00ffff','#ffff00','#800080','#f08080','#20b2aa','#660066','#990000']
+        btn.addEventListener('click', ()=>{
+            const rand = Math.floor(Math.random()*color.length);
+            code.innerHTML = color[rand]
+            body.style.backgroundColor = color[rand]
+        })
+    </script>
+</body>
+</html>
